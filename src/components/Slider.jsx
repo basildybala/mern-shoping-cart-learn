@@ -91,49 +91,7 @@ const Slider = () => {
       }
     };
   return (
-    // <Container>
-    // <Arrow direction="left" onClick={()=>handleClick("left")}>
-    //    <ArrowLeftOutlined /> 
-    // </Arrow>
-    // <Wrapper slideIndex={slideIndex}>
-    //     {sliderItems.map(items=>{
-           
-    //         <Slide bg={items.bg}>
-    //             <ImgContainer>
-    //             <Image src={items.img}/>
-    //             </ImgContainer>
-    //             <InfoContainer>
-    //                 <Title>{items.title}</Title>
-    //                  <Desc>{items.desc}</Desc>
-    //                 <Button>Shop Now</Button>
-    //             </InfoContainer>
-    //         </Slide>
-    //     })}
-    //     {/* <Slide bg="fcf1ed">
-    //         <ImgContainer>
-    //         <Image src={Me}/>
-    //         </ImgContainer>
-    //         <InfoContainer>
-    //             <Title>Popular Sale</Title>
-    //             <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequuntur eligendi iure sapiente temporibus, nisi corrupti quasi magni tenetur ex</Desc>
-    //             <Button>Shop Now</Button>
-    //         </InfoContainer>
-    //     </Slide>
-    //     <Slide>
-    //         <ImgContainer>
-    //         <Image src={Me}/>
-    //         </ImgContainer>
-    //         <InfoContainer>
-    //             <Title>Winter Sale</Title>
-    //             <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consequuntur eligendi iure sapiente temporibus, nisi corrupti quasi magni tenetur ex</Desc>
-    //             <Button>Shop Now</Button>
-    //         </InfoContainer>
-    //     </Slide> */}
-    // </Wrapper>
-    // <Arrow direction="right" onClick={()=>handleClick("right")}>
-    //    <ArrowRightOutlined /> 
-    // </Arrow>
-    // </Container>
+
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined />
