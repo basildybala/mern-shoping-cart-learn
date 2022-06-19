@@ -64,9 +64,9 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
-const Error = styled.span`
-  color: red;
-`;
+// const Error = styled.span`
+//   color: red;
+// `;
 
 const Login = () => {
   
