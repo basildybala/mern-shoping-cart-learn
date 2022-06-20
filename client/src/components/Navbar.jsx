@@ -3,6 +3,8 @@ import { Search,ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react'
 import styled from 'styled-components'
 import {mobile} from '../responsive'
+import {userSelector, useSelector} from 'react-redux'
+import { Link } from "react-router-dom";
 const Container=styled.div`
 height: 60px;
 ${mobile({height:"50px"})}
@@ -68,6 +70,8 @@ const MenuItem = styled.div`
 
 
 const Navbar = () => {
+  const qty = useSelector(state=>state.cart.quantity)
+  
   return (
     <Container>
         <Wrapper>
@@ -87,10 +91,12 @@ const Navbar = () => {
                 <MenuItem>REGISTER</MenuItem>
                 <MenuItem>SIGN IN</MenuItem>
                 <MenuItem>
-                <Badge badgeContent={4}  color="primary">
-                <ShoppingCartOutlined />
-                </Badge>
-          </MenuItem>
+                  <Link to="/cart">
+                  <Badge badgeContent={qty}  color="primary">
+                  <ShoppingCartOutlined />
+                  </Badge>
+                  </Link>
+                </MenuItem>
             </Right>
         </Wrapper>
     </Container>

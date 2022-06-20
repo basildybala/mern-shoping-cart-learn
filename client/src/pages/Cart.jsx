@@ -4,6 +4,7 @@ import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
 import { Add, Remove } from "@material-ui/icons"
+import { useSelector } from "react-redux"
 
 const Container=styled.div`
     
@@ -156,6 +157,7 @@ const Button = styled.button`
 
 
 const Cart = () => {
+  const cart =useSelector(state=>state.cart)
   return (
     <Container>
         <Navbar />
@@ -172,44 +174,29 @@ const Cart = () => {
             </Top>
             <Bottom>
                 <Info>
-                    <Product>
-                        <ProductDetail>
-                            <Image src="https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png" />
-                            <Details>
-                                <ProductName><b>Product:</b>Jessica Thunder</ProductName>
-                                <ProductId><b>Id:</b>478575427485</ProductId>
-                                <ProductColor color="black" />
-                                <ProductSize><b>Size:</b>24.5</ProductSize>
-                            </Details>
-                        </ProductDetail> 
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add />
-                                <ProductAmount>2</ProductAmount>
-                                <Remove />
-                            </ProductAmountContainer>
-                            <ProductPrice>$ 30</ProductPrice>
-                        </PriceDetail>
-                    </Product>
+                    {cart.products.map(products=>(
+                      <Product>
+                      <ProductDetail>
+                          <Image src={products.img} />
+                          <Details>
+                              <ProductName><b>Product:</b>Jessica Thunder</ProductName>
+                              <ProductId><b>Id:</b>478575427485</ProductId>
+                              <ProductColor color="black" />
+                              <ProductSize><b>Size:</b>24.5</ProductSize>
+                          </Details>
+                      </ProductDetail> 
+                      <PriceDetail>
+                          <ProductAmountContainer>
+                              <Add />
+                              <ProductAmount>2</ProductAmount>
+                              <Remove />
+                          </ProductAmountContainer>
+                          <ProductPrice>$ 30</ProductPrice>
+                      </PriceDetail>
+                      </Product>
+                    ))}
                     <Hr />
-                    <Product>
-                        <ProductDetail>
-                            <Image src="https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png" />
-                            <Details>
-                                <ProductName><b>Product:</b>Jessica Thunder</ProductName>
-                                <ProductColor color="black" />
-                                <ProductSize><b>Size:</b>24.5</ProductSize>
-                            </Details>
-                        </ProductDetail> 
-                        <PriceDetail>
-                            <ProductAmountContainer>
-                                <Add />
-                                <ProductAmount>2</ProductAmount>
-                                <Remove />
-                            </ProductAmountContainer>
-                            <ProductPrice>$ 30</ProductPrice>
-                        </PriceDetail>
-                    </Product>
+                   
                 </Info>
                 <Summary>
                     <SummaryTitle>Order Summary</SummaryTitle>
