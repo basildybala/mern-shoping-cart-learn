@@ -84,6 +84,7 @@ const Product = (item) => {
             </Icon>
             <Icon>
                 <FavoriteBorderOutlined />
+                
             </Icon>
             
         </Info>

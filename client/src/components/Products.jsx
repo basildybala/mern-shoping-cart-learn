@@ -10,26 +10,62 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 `;
+
+
+
+
+
+
+
+
+
+
 const Products = ({cat,filters,sort}) => {
+  console.log("filter"+filters);
   const [products,setProducts] = useState([])
-  const [filteredProducts,setFilterdProducts] = useState([])
+  const [filteredProducts,setFilteredProducts] = useState([])
   
   useEffect(()=>{
     
     const getProducts = async ()=>{
       try {
+        
         const res= await axios.get(cat ?`http://localhost:5000/api/products?category=${cat}`
         :"http://localhost:5000/api/products")
         setProducts(res.data)
+        console.log(res.data);
       } catch (error) {}
     }
     getProducts() 
+    
   },[cat])
+
+  // useEffect(()=>{
+  //   cat && setFilterdProducts(
+  //     products.filter((item)=>{
+  //       Object.entries(filters).every(([key,value])=>
+  //         item[key].includes(value)
+  //       )
+  //     })
+  //   );
+   
+  // },[products,cat,filters])
+  useEffect(() => {
+    cat &&
+      setFilteredProducts(
+        products.filter((item) =>
+          Object.entries(filters).every(([key, value]) =>
+            item[key].includes(value)
+          )
+        )
+      );
+  }, [products, cat, filters]);
+
   
   return (
     <Container>
         
-        {popularProducts.map(item=>(
+        {filteredProducts.map(item=>(
             
             
             <Product item={item} key={item.id} />

@@ -49,7 +49,9 @@ const ProductList = () => {
       ...filters,
       [event.target.name]:value
     })
+    
   }
+  
 
   return (
     <Container>
