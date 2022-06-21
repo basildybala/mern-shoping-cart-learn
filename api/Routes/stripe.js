@@ -11,6 +11,7 @@ router.post("/payment", (req, res) => {
       source: req.body.tokenId,
       amount: req.body.amount,
       currency: "INR",
+      
     },
     (stripeErr, stripeRes) => {
       if (stripeErr) {
@@ -22,6 +23,7 @@ router.post("/payment", (req, res) => {
       }
     }
   );
+  console.log(err);
 });
 
 module.exports = router;
