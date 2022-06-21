@@ -6,6 +6,7 @@ const orderRoutes=require('./Routes/order')
 const cartRoutes=require('./Routes/cart')
 const productRoutes=require('./Routes/products')
 const authRoutes=require('./Routes/auth')
+const stripeRoutes=require('./Routes/stripe')
 const cors = require('cors')
 
 
@@ -25,6 +26,7 @@ app.use('/api/auth',authRoutes)
 app.use('/api/products',productRoutes)
 app.use('/api/carts',cartRoutes)
 app.use('/api/orders',orderRoutes)
+app.use('/api/checkout',stripeRoutes)
 
 
 
