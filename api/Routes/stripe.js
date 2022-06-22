@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // const stripe = require("stripe")(process.env.STRIPE_KEY);
-const KEY = "sk_test_51KyV11SIPg3GKMJJqx7aXAZpz3bFDNkcWX9B6yAdTYpf5r9bwZMZR31gQWyfFeg1lPhUXv44uV0nKEyZHXI4OR5a009GVn2qp8"
+const KEY = "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"
 const stripe = require("stripe")(KEY);
 
 router.post("/payment", (req, res) => {
@@ -23,7 +23,7 @@ router.post("/payment", (req, res) => {
       }
     }
   );
-  console.log(err);
+
 });
 
 module.exports = router;

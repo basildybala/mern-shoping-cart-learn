@@ -17,7 +17,7 @@ import Success from './pages/Success'
 
 
 const app = () => {
-  const user =true
+  const user =false
   return (
     <Router>
      <Switch>
