@@ -13,11 +13,13 @@ import {
 
 } from "react-router-dom";
 import Success from './pages/Success'
+import { useSelector } from "react-redux";
 
 
 
-const app = () => {
-  const user =false
+const App = () => {
+  const user = useSelector((state) => state.user.currentUser);
+  // const User = null
   return (
     <Router>
      <Switch>
@@ -49,4 +51,4 @@ const app = () => {
   )
 }
 
-export default app
+export default App

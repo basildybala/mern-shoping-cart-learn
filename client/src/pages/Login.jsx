@@ -67,15 +67,20 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
-// const Error = styled.span`
-//   color: red;
-// `;
+const Error = styled.span`
+  color: red;
+`;
+
 
 const Login = () => {
   const [username,setUsername]=useState("")
   const [password,setPassword]=useState("")
+  
   const dispatch=useDispatch()
-  const [isFetching,error]=useSelector((state)=> state.user)
+  const {isFetching,error}=useSelector((state)=> state.user)
+  //const { isFetching, error } = useSelector((state) => state.user);
+  
+ 
 
   const handleClick =(e)=>{
       e.preventDefault()
@@ -97,9 +102,10 @@ const Login = () => {
             onChange={(e)=>setPassword(e.target.value)}
             
           />
-          <Button  onClick={handleClick} disabled={isFetching} >
+          <Button  onClick={handleClick} disabled={isFetching}  >
             LOGIN
           </Button>
+          {error &&<Error>Somthing Went Wrong</Error>}
           
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
